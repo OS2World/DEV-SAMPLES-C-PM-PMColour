@@ -1,0 +1,16 @@
+CFLAGS = /O /G5ils /Rn
+
+all: pmcolour.exe
+
+pmcolour.obj: pmcolour.c pmcolour.h
+
+pmcolour.res: pmcolour.rc pmcolour.dlg pmcolour.h 
+	rc -r -w2 $*.rc
+
+pmcolour.exe: pmcolour.obj pmcolour.res
+	$(CC) $(CFLAGS) $*.obj /b"/pmtype:pm"
+	rc $*.res
+
+clean:
+	-del *.obj *.res 2>nul
+

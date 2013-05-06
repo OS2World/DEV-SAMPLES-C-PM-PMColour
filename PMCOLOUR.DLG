@@ -1,0 +1,26 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+DLGINCLUDE 1 "pmcolour.h"
+
+DLGTEMPLATE ID_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Edit Colour", ID_DLG, 40, 20, 260, 170, WS_VISIBLE | NOT 
+            WS_SAVEBITS, FCF_SYSMENU | FCF_TITLEBAR | FCF_MINBUTTON | 
+            FCF_NOBYTEALIGN
+    BEGIN
+        CONTROL         "", ID_COL, 10, 30, 240, 135, "ColorSelectClass", 
+                        WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        DEFPUSHBUTTON   "~Undo", ID_UNDO, 25, 5, 40, 14
+        SPINBUTTON      ID_SPINR, 85, 5, 40, 12, SPBS_NUMERICONLY | 
+                        SPBS_MASTER | SPBS_JUSTRIGHT | SPBS_FASTSPIN
+        SPINBUTTON      ID_SPING, 140, 5, 40, 12, SPBS_NUMERICONLY | 
+                        SPBS_MASTER | SPBS_JUSTRIGHT | SPBS_FASTSPIN
+        SPINBUTTON      ID_SPINB, 195, 5, 40, 12, SPBS_NUMERICONLY | 
+                        SPBS_MASTER | SPBS_JUSTRIGHT | SPBS_FASTSPIN
+        LTEXT           "Red", -1, 92, 20, 17, 8
+        LTEXT           "Green", -1, 144, 20, 25, 8, NOT WS_GROUP
+        LTEXT           "Blue", -1, 201, 20, 19, 8, NOT WS_GROUP
+    END
+END
+

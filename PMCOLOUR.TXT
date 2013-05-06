@@ -1,0 +1,8 @@
+This sample code demonstrates how to access OS/2's Colour Wheel control as
+used in the Edit Colour dialog boxes.
+
+Paul Ratcliffe
+
+E-mail: paulr@orac.clara.co.uk
+        paul.ratcliffe@bbc.co.uk
+
