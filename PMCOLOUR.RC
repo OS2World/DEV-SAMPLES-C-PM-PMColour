@@ -2,4 +2,3 @@
 #include "pmcolour.h"
 
 RCINCLUDE pmcolour.dlg
-

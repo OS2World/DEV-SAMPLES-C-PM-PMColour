@@ -4,4 +4,3 @@
 #define ID_SPINR                    103
 #define ID_SPING                    104
 #define ID_SPINB                    105
-

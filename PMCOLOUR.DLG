@@ -23,4 +23,3 @@ BEGIN
         LTEXT           "Blue", -1, 201, 20, 19, 8, NOT WS_GROUP
     END
 END
-

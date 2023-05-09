@@ -31,7 +31,7 @@ typedef	struct CWDATA {
 MRESULT EXPENTRY DlgProc (HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2);
 
 
-main(void)
+int main(void)
 {
     HAB		hab;
     HMQ		hmq;
@@ -41,7 +41,7 @@ main(void)
     char	msgbuf[64];
 
     hmq = WinCreateMsgQueue (hab = WinInitialize(0), 0);
-    hlib = WinLoadLibrary (hab, "WPCONFIG.DLL");
+    hlib = WinLoadLibrary (hab, (PCSZ) "WPCONFIG.DLL");
     cwparam.cb = sizeof(CWPARAM);
     cwparam.rgb.bRed = 63;
     cwparam.rgb.bGreen = 127;
@@ -52,7 +52,7 @@ main(void)
     WinDestroyWindow(hwndDlg);
     sprintf (msgbuf, "Returned values are:\n  R = %u, G = %u, B = %u",
 	cwparam.rgb.bRed, cwparam.rgb.bGreen, cwparam.rgb.bBlue);
-    WinMessageBox (HWND_DESKTOP, HWND_DESKTOP, msgbuf, "Edit Colour", 0,
+    WinMessageBox (HWND_DESKTOP, HWND_DESKTOP, (PCSZ) msgbuf, (PCSZ) "Edit Colour", 0,
 	MB_INFORMATION | MB_OK);
     WinDeleteLibrary (hab, hlib);
     WinDestroyMsgQueue(hmq);
@@ -169,4 +169,3 @@ MRESULT EXPENTRY DlgProc (HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2)
 
     return (WinDefDlgProc (hwnd, msg, mp1, mp2));
 }
-
